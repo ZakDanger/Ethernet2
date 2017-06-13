@@ -22,6 +22,8 @@
 class EthernetClass {
 private:
   IPAddress _dnsServerAddress;
+  char* _dnsDomainName;
+  char* _hostName;
   DhcpClass* _dhcp;
   unsigned long _dhcpTimeout;
 public:
@@ -30,7 +32,11 @@ public:
   static uint8_t _state[MAX_SOCK_NUM];
   static uint16_t _server_port[MAX_SOCK_NUM];
 
+<<<<<<< HEAD
   EthernetClass() { w5500_cspin = 10; _dhcpTimeout = 60000; }
+=======
+  EthernetClass() { _dhcp = NULL; w5500_cspin = 10; }
+>>>>>>> refs/remotes/adafruit/master
   void init(uint8_t _cspin = 10) { w5500_cspin = _cspin; }
 
   void setDhcpTimeout(unsigned long timeout) {
@@ -65,6 +71,8 @@ public:
   IPAddress subnetMask();
   IPAddress gatewayIP();
   IPAddress dnsServerIP();
+  char* dnsDomainName();
+  char* hostName();
 
   friend class EthernetClient;
   friend class EthernetServer;
