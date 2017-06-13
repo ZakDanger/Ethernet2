@@ -32,11 +32,7 @@ public:
   static uint8_t _state[MAX_SOCK_NUM];
   static uint16_t _server_port[MAX_SOCK_NUM];
 
-<<<<<<< HEAD
-  EthernetClass() { w5500_cspin = 10; _dhcpTimeout = 60000; }
-=======
-  EthernetClass() { _dhcp = NULL; w5500_cspin = 10; }
->>>>>>> refs/remotes/adafruit/master
+  EthernetClass() { _dhcp = NULL; w5500_cspin = 10; _dhcpTimeout = 60000; }
   void init(uint8_t _cspin = 10) { w5500_cspin = _cspin; }
 
   void setDhcpTimeout(unsigned long timeout) {
